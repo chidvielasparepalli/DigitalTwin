@@ -1,0 +1,30 @@
+{
+  "name": "@digital-twin/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx src/migrate-cli.ts",
+    "db:seed": "tsx src/seed.ts"
+  },
+  "dependencies": {
+    "@digital-twin/shared": "workspace:*",
+    "bcryptjs": "^3.0.2",
+    "better-sqlite3": "^13.0.0",
+    "drizzle-orm": "^0.44.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "drizzle-kit": "^0.31.0",
+    "tsx": "^4.20.3",
+    "vitest": "^3.2.4"
+  }
+}
